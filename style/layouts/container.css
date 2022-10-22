@@ -1,0 +1,52 @@
+@import "../components/table.css";
+@import "../components/header.css";
+@import "../components/footer.css";
+@import "../components/toolbar.css";
+@import "../components/checkbox.css";
+@import "../components/modal.css";
+@import "../components/select.css";
+@import "../components/multi_select.css";
+
+.container {
+  display: flex;
+  width: calc(100vw - 220px);
+  height: 100vh;
+  flex-direction: column;
+}
+
+.header {
+  padding: 0 16px;
+  height: 48px;
+  width: 100%;
+  box-shadow: 5px 0px 10px var(--shadow-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  height: calc(100vh - 48px);
+  width: 100%;
+}
+
+.content--non-data {
+  height: calc(100vh - 48px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content--non-data > * ~  * {
+  margin-top: 16px;
+}
+
+.content--non-data > img {
+  height: 150px;
+  margin-bottom: 16px;
+}
+
+

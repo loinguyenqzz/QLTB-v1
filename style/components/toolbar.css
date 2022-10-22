@@ -1,0 +1,12 @@
+@import "../components/input.css";
+@import "../components/button.css";
+
+.content-toolbar {
+    display: flex;
+    justify-content: space-between;
+    height: 46px;
+}
+
+.toolbar-right {
+    display: flex;
+}

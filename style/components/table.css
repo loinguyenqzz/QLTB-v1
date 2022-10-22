@@ -1,0 +1,74 @@
+.table-wrap {
+  flex-grow: 1;
+  overflow-x: auto;
+}
+
+.content-table {
+  border-collapse: collapse;
+  height: 100%;
+}
+
+.content-table thead tr {
+  width: calc(100% - 8px);
+  text-align: center;
+}
+
+.content-table tbody {
+  height: 100%;
+  display: block;
+  overflow-y: scroll;
+}
+
+.content-table tr {
+  height: 40px;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.content-table tr td {
+  padding: 0 8px;
+}
+
+.content-table tbody tr:hover {
+  background-color: var(--hover-grid-line);
+}
+
+.content-table thead {
+  background-color: var(--header-grid-panel);
+}
+
+.content-table td + td,
+.content-table th + th {
+  border-left: 1px solid var(--line-grid-panel);
+}
+
+.content-table tbody tr {
+  border-top: 1px solid var(--line-grid-panel);
+}
+
+.content-table .column-checkbox {
+  width: 50px;
+  text-align: center;
+}
+
+.content-table tbody .column-name {
+  color: var(--main-color);
+}
+
+
+.content-table .column-name {
+  width: 150px;
+}
+
+.content-table .column-edit {
+  width: 70px;
+}
+
+.column-teacher-code {
+  width: 100px;
+}
+
+
+
+
