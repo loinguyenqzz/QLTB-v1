@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     handleStateSidebar()
     hanldeActiveSidebarItems()
@@ -15,16 +15,22 @@ const hanldeActiveSidebarItems = () => {
 
 const handleStateSidebar = () => {
     $(".btn-navigate").click(() => {
-        $(".sidebar").toggleClass("sidebar-mini") 
+        $(".sidebar").toggleClass("sidebar-mini")
 
         if ($(".sidebar-mini").length > 0) {
             // state mini side bar 
             $(".logo").hide()
             $(".sidebar-menu-item .item-title").hide()
+            $(".sidebar-header").css("justify-content", "center")
         } else {
             // state normal side bar
-            $(".logo").show()
-            $(".sidebar-menu-item .item-title").show()
+            setTimeout(() => {
+                //transition delay
+                
+                $(".logo").show()
+                $(".sidebar-menu-item .item-title").show()
+                $(".sidebar-header").css("justify-content", "space-between")
+            }, 300)
         }
     })
 }

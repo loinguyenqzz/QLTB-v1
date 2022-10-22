@@ -10,6 +10,7 @@
 .container {
   display: flex;
   width: calc(100vw - 220px);
+  flex-grow: 1;
   height: 100vh;
   flex-direction: column;
 }

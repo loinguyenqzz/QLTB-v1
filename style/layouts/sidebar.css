@@ -3,11 +3,16 @@
     height: 100vh;
     background-color: var(--sidebar-color);
     color: white;
+    flex-shrink: 0;
     transition: width .4s ease;
 }
 
 .sidebar-mini {
     width: 55px;
+}
+
+.sidebar-menu {
+    
 }
 
 .sidebar-header {
@@ -37,10 +42,6 @@
     height: 16px;
     width: 16px;
     cursor: pointer;
-}
-
-.sidebar-menu {
-    
 }
 
 .item-title {
