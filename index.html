@@ -21,140 +21,155 @@
                 <span>Đang tải</span>
             </div>
         </div>
-        <div class="modal hide">
-            <div class="modal__inner">
-                <img src="./assets/Icons/ic_X_2.png" class="modal-close cursor-pointer" alt="">
-                <div id="modal-content-add" class="modal-content">
-                    <div class="modal-content__left">
-                        <img src="/assets/Images/default_avatar.png" alt="">
-                        <div class="btn-choose-file flex-center">Chọn ảnh</div>
-                        <div style="text-align: center;">Họ và tên</div>
-                        <div style="text-align: center;">Số hiệu cán bộ</div>
-                    </div>
-                    <div class="modal-content__right">
-                        <span class="modal__title"></span>
-                        <div class="form-wrapper">
-                            <div class="form-group">
-                                <label for="">Số hiệu cán bộ</label>
-                                <input id="input-teacher-code" type="text" class="m-input">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Họ và tên</label>
-                                <input type="text" class="m-input">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Số điện thoại</label>
-                                <input type="number" class="m-input">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="text" class="m-input">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Tổ bộ môn</label>
-                                <div tabindex="0" class="m-select">
-                                    <span class=""></span>
-                                    <img src="./assets/Icons/icon_down-arrow-small.svg" alt="">
-                                    <div class="m-select__wrap-option hide">
-                                        <div class="m-select__option m-select__option--active">Tổ Toán - Tin</div>
-                                        <div class="m-select__option">Tổ Lý</div>
-                                        <div class="m-select__option">Tổ Hóa - Sinh</div>
-                                        <div class="m-select__option">Tổ Anh - Văn</div>
-                                    </div>
+        <div id="modal-add" class="modal hide">
+            <div class="flex-center">
+                <div class="modal__inner modal__inner--add">
+                    <img src="./assets/Icons/ic_X_2.png" class="modal-close cursor-pointer" alt="">
+                    <div id="modal-content-add" class="modal-content">
+                        <div class="modal-content__left">
+                            <img src="/assets/Images/default_avatar.png" alt="">
+                            <div class="btn-choose-file">Chọn ảnh</div>
+                            <div id="display-teacher-name" style="text-align: center;">Họ và tên</div>
+                            <div id="display-teacher-code" style="text-align: center;">Số hiệu cán bộ</div>
+                        </div>
+                        <div class="modal-content__right">
+                            <span class="modal__title"></span>
+                            <div class="form-wrapper">
+                                <div class="form-group">
+                                    <label for="input-teacher-code">Số hiệu cán bộ<span style="color: red;">*</span></label>
+                                    <input id="input-teacher-code" type="text" class="m-input">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label title="Quản lý theo môn" for="">QL theo môn</label>
-                                <div tabindex="0" class="multi-select">
-                                    <div class="multi-select__icon--show">
-                                    </div>
-                                    <ul class="tag-wrap">
-                                        <!-- <li value="tag-multi-select-1" class="tag-picked">Toán
-                                            <div class="tag-picked__btn--close"></div>
-                                        </li> -->
-                                    </ul>
-                                    <div class="multi-select__wrap shadow hide">
-                                        <div class="multi-select__header">
-                                            <input type="checkbox" name="" class="m-checkbox">
-                                            <span>Tất cả</span>
-                                        </div>
-                                        <div class="multi-select__option-wrap">
-                                            <div class="multi-select__option">
-                                                <input value="multi-select-1" type="checkbox" name="" class="m-checkbox">
-                                                <span>Toán</span>
-                                            </div>
-                                            <div class="multi-select__option">
-                                                <input value="multi-select-2" type="checkbox" name="" class="m-checkbox">
-                                                <span>Lý</span>
-                                            </div>
-                                            <div class="multi-select__option">
-                                                <input value="multi-select-3" type="checkbox" name="" class="m-checkbox">
-                                                <span>Hóa</span>
-                                            </div>
+                                <div class="form-group">
+                                    <label for="">Họ và tên<span style="color: red;">*</span></label>
+                                    <input id="input-teacher-name" type="text" class="m-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Số điện thoại</label>
+                                    <input type="number" class="m-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="text" class="m-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Tổ bộ môn</label>
+                                    <div tabindex="0" class="m-select">
+                                        <span class=""></span>
+                                        <img src="./assets/Icons/icon_down-arrow-small.svg" alt="">
+                                        <div class="m-select__wrap-option hide">
+                                            <div class="m-select__option m-select__option--active">Tổ Toán - Tin</div>
+                                            <div class="m-select__option">Tổ Lý</div>
+                                            <div class="m-select__option">Tổ Hóa - Sinh</div>
+                                            <div class="m-select__option">Tổ Anh - Văn</div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group" style="width: 100%;">
-                                <label title="Quản lý kho, phòng" for="">QL kho, phòng</label>
-                                <div class="multi-select">
-                                    <div class="multi-select__icon--show">
-                                    </div>
-                                    <ul class="tag-wrap">
-                                        <!-- <li id="multi-select-1" class="tag-picked">Kho phòng chung
-                                            <div class="tag-picked__btn--close"></div>
-                                        </li> -->
-                                    </ul>
-                                    <div class="multi-select__wrap shadow hide">
-                                        <div class="multi-select__header">
-                                            <input type="checkbox" name="" class="m-checkbox">
-                                            <span>Tất cả</span>
+                                <div class="form-group">
+                                    <label title="Quản lý theo môn" for="">QL theo môn</label>
+                                    <div tabindex="0" class="multi-select">
+                                        <div class="multi-select__icon--show">
                                         </div>
-                                        <div class="multi-select__option-wrap">
-                                            <div class="multi-select__option">
-                                                <input value="multi-select-1" type="checkbox" name="" class="m-checkbox">
-                                                <span>Kho phòng chung</span>
+                                        <ul class="tag-wrap">
+                                            <!-- <li value="tag-multi-select-1" class="tag-picked">Toán
+                                                <div class="tag-picked__btn--close"></div>
+                                            </li> -->
+                                        </ul>
+                                        <div class="multi-select__wrap shadow hide">
+                                            <div class="multi-select__header">
+                                                <input type="checkbox" name="" class="m-checkbox">
+                                                <span>Tất cả</span>
                                             </div>
-                                            <div class="multi-select__option">
-                                                <input value="multi-select-2" type="checkbox" name="" class="m-checkbox">
-                                                <span>Phòng lý</span>
-                                            </div>
-                                            <div class="multi-select__option">
-                                                <input value="multi-select-3" type="checkbox" name="" class="m-checkbox">
-                                                <span>Phòng tin học</span>
+                                            <div class="multi-select__option-wrap">
+                                                <div class="multi-select__option">
+                                                    <input value="multi-select-1" type="checkbox" name="" class="m-checkbox">
+                                                    <span>Toán</span>
+                                                </div>
+                                                <div class="multi-select__option">
+                                                    <input value="multi-select-2" type="checkbox" name="" class="m-checkbox">
+                                                    <span>Lý</span>
+                                                </div>
+                                                <div class="multi-select__option">
+                                                    <input value="multi-select-3" type="checkbox" name="" class="m-checkbox">
+                                                    <span>Hóa</span>
+                                                </div>
+                                                <div class="multi-select__option">
+                                                    <input value="multi-select-4" type="checkbox" name="" class="m-checkbox">
+                                                    <span>Sinh</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group" style="width: 40%;">
-                                <input type="checkbox" class="m-checkbox">
-                                <label title="Trình độ nghiệp vụ quản lý thiết bị">Trình độ nghiệp vụ QLTB</label>
-                            </div>
-                            <div class="form-group" style="width: 20%;">
-                                <input type="checkbox" class="m-checkbox">
-                                <label>Đang làm việc</label>
-                            </div>
-                            <div class="form-group" style="width: 40%;">
-                                <label for="">Ngày nghỉ việc</label>
-                                <div class="m-input-date">
-                                    <input class="m-input " type="date" >
+                                <div class="form-group" style="width: 100%;">
+                                    <label title="Quản lý kho, phòng" for="">QL kho, phòng</label>
+                                    <div class="multi-select">
+                                        <div class="multi-select__icon--show">
+                                        </div>
+                                        <ul class="tag-wrap">
+                                            <!-- <li id="multi-select-1" class="tag-picked">Kho phòng chung
+                                                <div class="tag-picked__btn--close"></div>
+                                            </li> -->
+                                        </ul>
+                                        <div class="multi-select__wrap shadow hide">
+                                            <div class="multi-select__header">
+                                                <input type="checkbox" name="" class="m-checkbox">
+                                                <span>Tất cả</span>
+                                            </div>
+                                            <div class="multi-select__option-wrap">
+                                                <div class="multi-select__option">
+                                                    <input value="multi-select-1" type="checkbox" name="" class="m-checkbox">
+                                                    <span>Kho phòng chung</span>
+                                                </div>
+                                                <div class="multi-select__option">
+                                                    <input value="multi-select-2" type="checkbox" name="" class="m-checkbox">
+                                                    <span>Phòng lý</span>
+                                                </div>
+                                                <div class="multi-select__option">
+                                                    <input value="multi-select-3" type="checkbox" name="" class="m-checkbox">
+                                                    <span>Phòng tin học</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="width: 40%;">
+                                    <input type="checkbox" class="m-checkbox">
+                                    <label title="Trình độ nghiệp vụ quản lý thiết bị">Trình độ nghiệp vụ QLTB</label>
+                                </div>
+                                <div class="form-group" style="width: 20%;">
+                                    <input id="isWorking" type="checkbox" class="m-checkbox">
+                                    <label>Đang làm việc</label>
+                                </div>
+                                <div id="quit-work" class="form-group" style="width: 40%;">
+                                    <label for="">Ngày nghỉ việc</label>
+                                    <div class="m-input-date">
+                                        <input class="m-input " type="date" >
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div id="modal-footer-add" class="modal__footer">
+                        <button class="m-btn m-btn-style2 modal__btn-close">Đóng</button>
+                        <button id="btn-save" class="m-btn m-btn-style1">Lưu</button>
+                    </div>
+                    
                 </div>
-                <div id="modal-content-delte" class="modal-content hide">
-                    <span class="titile">Thông báo</span>
-                    <div>Bạn có chắc chắn muốn xóa cán bộ giáo viên đang chọn không ?</div>
-                </div>
-                <div id="modal-footer-delete" class="modal__footer">
-                    <button class="m-btn m-btn-style2 modal__btn-close">Đóng</button>
-                    <button id="btn-save" class="m-btn m-btn-style1">Lưu</button>
-                </div>
-                <div id="modal-footer-delete" class="modal__footer hide">
-                    <button class="m-btn m-btn-style2 modal__btn-close">Đóng</button>
-                    <button id="btn-save" class="m-btn m-btn-style1">Đồng ý</button>
+            </div>
+        </div>
+
+        <div id="modal-delete" class="modal hide">
+            <div class="flex-center">
+                <div class="modal__inner modal__inner--dlete">
+                    <img src="./assets/Icons/ic_X_2.png" class="modal-close cursor-pointer" alt="">
+                    <div id="modal-content-delte" class="modal-content">
+                        <span class="title">Thông báo</span>
+                        <div>Bạn có chắc chắn muốn xóa cán bộ giáo viên đang chọn không ?</div>
+                    </div>
+                    <div id="modal-footer-delete" class="modal__footer">
+                        <button class="m-btn m-btn-style2 modal__btn-close">Đóng</button>
+                        <button id="btn-accept-delete" class="m-btn m-btn-style1">Đồng ý</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -235,8 +250,12 @@
                     <div class="toolbar-right">
                         <button id="btn-add" class="m-btn m-btn-style1">Thêm</button>
                         <button class="m-btn m-btn-style2">Xuất khẩu</button>
-                        <div class="m-btn m-btn-style4">
+                        <div id="toolbar-btn-more" class="m-btn m-btn-style4 relative">
                             <img src="./assets/Icons/ic_More.png" alt="">
+                            <div class="multi-delete shadow hide">
+                                <img src="/assets/Icons/ic_delete.png" alt="">
+                                <span>Xóa</span>
+                            </div>
                         </div>
                     </div>
                 </div>

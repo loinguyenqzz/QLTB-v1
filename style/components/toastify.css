@@ -2,7 +2,7 @@
     min-height: 80px;
     min-width: 300px;
     background-color: white;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     top: 10px;
     right: 10px;

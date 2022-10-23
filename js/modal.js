@@ -1,13 +1,5 @@
 $(document).ready(function () {
 
-    const modalTitle = $(".modal__title")
-
-    $("#btn-add").click(() => {
-        modalTitle.html("Thêm hồ sơ Cán bộ, giáo viên")
-        $(".modal").show()
-        $("#input-teacher-code").focus()
-    })
-
     $(".modal-close").click(() => {
         $(".modal").hide()
     })
@@ -16,11 +8,15 @@ $(document).ready(function () {
         $(".modal").hide()
     })
 
-    $(".record__field--edit").each(function () {
-        $(this).click(function () {
-            modalTitle.html("Sửa hồ sơ Cán bộ, giáo viên")
-            $(".modal").show()
-        })
+    $("#isWorking").click(function() {
+        $("#quit-work").css("visibility", this.checked ? "hidden" : "visible" )
+    }) 
+
+    $("#input-teacher-code").change((e) => {
+        $("#display-teacher-code").text(e.target.value)
     })
 
+    $("#input-teacher-name").change((e) => {
+        $("#display-teacher-name").text(e.target.value)
+    })
 });

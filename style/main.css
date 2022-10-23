@@ -47,14 +47,11 @@ body {
 }
 
 .flex-center {
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.flex-jus-sb {
-  display: flex;
-  justify-content: space-between;
 }
 
 .flex-col {
@@ -69,6 +66,10 @@ body {
 
 .block {
   display: block;
+}
+
+.relative {
+  position: relative;
 }
 
 .hide {
