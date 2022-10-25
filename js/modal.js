@@ -6,12 +6,12 @@ let recordId = 0
 $(document).ready(function () {
 
     $(".btn-add").click(() => {
-            $(".modal__title").html("Thêm hồ sơ Cán bộ, giáo viên")
-            $("#modal-add").show()
-            $("#btn-save-add").show()
-            $("#input-teacher-code").focus()
-            $("#btn-save-add").off("click").on("click", handleSubmitAdd)
-        })
+        $(".modal__title").html("Thêm hồ sơ Cán bộ, giáo viên")
+        $("#modal-add").show()
+        $("#btn-save-add").show()
+        $("#input-teacher-code").focus()
+        $("#btn-save-add").off("click").on("click", handleSubmitAdd)
+    })
 
     $("#isWorking").click(function () {
         $("#quit-work").css("visibility", this.checked ? "hidden" : "visible")
@@ -60,35 +60,37 @@ const handleSubmitAdd = () => {
                 managementByDepartment.push(optionText)
             }
         })
+    if (teacherCode && teacherName) {
+        $("tbody").append(`<tr id=record-${++recordId} class="record">
+            <td class="column-checkbox">
+                <input type="checkbox" name="" id="" class="m-checkbox">
+            </td>
+            <td class="column-teacher-code">${teacherCode}</td>
+            <td class="column-teacher-name">${teacherName}</td>
+            <td class="w-100 column-phone-number">${phoneNumber}</td>
+            <td class="w-150 column-department">${department}</td>
+            <td class="w-100 column-management-by-subject">${managementBySubject.toString()}</td>
+            <td class="w-150 column-management-by-department">${managementByDepartment.toString()}</td>
+            <td class="text-center w-70 column-is-professional-skill">${isProfessionalSkill ? `<img src="/assets/Icons/ic_Check.png" alt=""></img>` : ""}</td>
+            <td class="text-center w-70 column-is-working">${isWorking ? `<img src="/assets/Icons/ic_Check.png" alt=""></img>` : ""}</td>
+            <td class="column-edit">
+                <img id="edit-NC01001" src="./assets/Icons/ic_Edit.png"
+                    class="cursor-pointer record__field--edit" alt="" srcset="">
+                <img src="./assets/Icons/ic_Remove.png" class="cursor-pointer record__field--delete" alt="" srcset="">
+            </td>
+        </tr>`)
 
-    $("tbody").append(`<tr id=record-${++recordId} class="record">
-        <td class="column-checkbox">
-            <input type="checkbox" name="" id="" class="m-checkbox">
-        </td>
-        <td class="column-teacher-code">${teacherCode}</td>
-        <td class="column-teacher-name">${teacherName}</td>
-        <td class="w-100 column-phone-number">${phoneNumber}</td>
-        <td class="w-150 column-department">${department}</td>
-        <td class="w-100 column-management-by-subject">${managementBySubject.toString()}</td>
-        <td class="w-150 column-management-by-department">${managementByDepartment.toString()}</td>
-        <td class="text-center w-70 column-is-professional-skill">${isProfessionalSkill ? `<img src="/assets/Icons/ic_Check.png" alt=""></img>` : ""}</td>
-        <td class="text-center w-70 column-is-working">${isWorking ? `<img src="/assets/Icons/ic_Check.png" alt=""></img>` : ""}</td>
-        <td class="column-edit">
-            <img id="edit-NC01001" src="./assets/Icons/ic_Edit.png"
-                class="cursor-pointer record__field--edit" alt="" srcset="">
-            <img src="./assets/Icons/ic_Remove.png" class="cursor-pointer record__field--delete" alt="" srcset="">
-        </td>
-    </tr>`)
-    
-    const record = $(`#record-${recordId}`)
-    // add event click delete field
+        const record = $(`#record-${recordId}`)
+        // add event click delete field
 
-    $(record).find(".record__field--delete").click(() => handleDeleteRecord(record))
-    // add event click edit field
-    $(record).find(".record__field--edit").click(() => handeEditRecord(record))
-    console.log("add");
-    toast.success("Thông báo", "Đã lưu dữ liệu thành công")
-    handleCloseModal()
+        $(record).find(".record__field--delete").click(() => handleDeleteRecord(record))
+        // add event click edit field
+        $(record).find(".record__field--edit").click(() => handeEditRecord(record))
+        console.log("add");
+        toast.success("Thông báo", "Đã thêm dữ liệu thành công")
+        handleCloseModal()
+    }
+
 }
 
 const handleDeleteRecord = (record) => {
@@ -105,15 +107,15 @@ const handeEditRecord = (record) => {
     modalTitle.html("Sửa hồ sơ Cán bộ, giáo viên")
     $("#modal-add").show()
     $("#btn-save-update").show()
-    $("#btn-save-update").off("click").on("click",() => handleSubmitUpdate(record))
+    $("#btn-save-update").off("click").on("click", () => handleSubmitUpdate(record))
     $("#input-teacher-code").val(record.find(".column-teacher-code").text())
     $("#input-teacher-name").val(record.find(".column-teacher-name").text())
     $("#input-phone-number").val(record.find(".column-phone-number").text())
-    $("#professionalSkill")[0].checked = 
-    record.find(".column-is-professional-skill").html() ? true : false
+    $("#professionalSkill")[0].checked =
+        record.find(".column-is-professional-skill").html() ? true : false
 
-    $("#isWorking")[0].checked = 
-    record.find(".column-is-working").html() ? true : false
+    $("#isWorking")[0].checked =
+        record.find(".column-is-working").html() ? true : false
 }
 
 const handleSubmitUpdate = (record) => {
@@ -146,16 +148,19 @@ const handleSubmitUpdate = (record) => {
                 managementByDepartment.push(optionText)
             }
         })
-    
-    record.find(".column-teacher-code").text(teacherCode)
-    record.find(".column-teacher-name").text(teacherName)
-    record.find(".column-phone-numeber").text(phoneNumber)
-    record.find(".column-department").text(department)
-    record.find(".column-management-by-subject").text(managementBySubject.toString())
-    record.find(".column-management-by-department").text(managementByDepartment.toString())
-    record.find(".column-is-working").html(isWorking ? `<img src="/assets/Icons/ic_Check.png" alt=""></img>` : "")
-    record.find(".column-is-professional-skill").html(isProfessionalSkill ? `<img src="/assets/Icons/ic_Check.png" alt=""></img>` : "")
-    handleCloseModal()
+
+    if (teacherCode && teacherName) {
+        record.find(".column-teacher-code").text(teacherCode)
+        record.find(".column-teacher-name").text(teacherName)
+        record.find(".column-phone-numeber").text(phoneNumber)
+        record.find(".column-department").text(department)
+        record.find(".column-management-by-subject").text(managementBySubject.toString())
+        record.find(".column-management-by-department").text(managementByDepartment.toString())
+        record.find(".column-is-working").html(isWorking ? `<img src="/assets/Icons/ic_Check.png" alt=""></img>` : "")
+        record.find(".column-is-professional-skill").html(isProfessionalSkill ? `<img src="/assets/Icons/ic_Check.png" alt=""></img>` : "")
+        handleCloseModal()
+        toast.success("Thông báo", "Đã sửa dữ liệu thành công")
+    }
 }
 
 const handleCloseModal = () => {

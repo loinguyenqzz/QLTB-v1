@@ -5,10 +5,11 @@ const setToastContent = (title, message) => {
     toastify.find(".toastify-content__message").text(message)
 }
 
-const renderToast = () => {
+const renderToast = (classType) => {
     toastify.addClass("toastify-active")
     setTimeout(() => {
         toastify.removeClass("toastify-active")
+        toastify.removeClass(classType)
     }, 3000)
 }
 
@@ -17,25 +18,25 @@ export default {
         toastify.addClass("toastify-success")
         toastify.children("img").attr("src", "/assets/Icons/ic_ToastMessage_Success.png")
         setToastContent(title, message)
-        renderToast()
+        renderToast("toastify-success")
     },
     error: (title, message) => {
         toastify.addClass("toastify-error")
         toastify.children("img").attr("src", "/assets/Icons/ic_ToastMessage_Fail.png")
         setToastContent(title, message)
-        renderToast()
+        renderToast("toastify-error")
     },
     notication: (title, message) => {
         toastify.addClass("toastify-notication")
         toastify.children("img").attr("src", "/assets/Icons/ic_ToastMessage_Info.png")
         setToastContent(title, message)
-        renderToast()
+        renderToast("toastify-notication")
     },
     warning: (title, message) => {
         toastify.addClass("toastify-warning")
         toastify.children("img").attr("src", "/assets/Icons/ic_ToastMessage_Warning.png")
         setToastContent(title, message)
-        renderToast()
+        renderToast("toastify-warning")
     }
 }
 

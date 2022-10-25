@@ -20,6 +20,10 @@
     width: 100%;
 }
 
+.m-input-error {
+    border: 1px solid var(--red);
+}
+
 .m-input-date > img {
     height: 100%;
     padding: 8px;

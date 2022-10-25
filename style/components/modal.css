@@ -91,6 +91,13 @@
   position: relative;
 }
 
+.error-message {
+  position: absolute;
+  bottom: -12px;
+  right: 0;
+  font: 11px;
+}
+
 .form-group > label {
   min-width: 100px;
 }
