@@ -57,19 +57,28 @@
 }
 
 
-.content-table .column-name {
+.content-table .column-teacher-name {
   width: 150px;
 }
 
 .content-table .column-edit {
-  width: 70px;
+  width: 75px;
+  min-width: 75px;
 }
 
 .column-teacher-code {
   width: 100px;
 }
 
+.column-management-by-subject,
+.column-management-by-department {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
 .record__field--edit, .record__field--delete {
+  float: left;
   padding: 2px;
   height: 28px;
   width: 28px;
